@@ -1,113 +1,106 @@
-Project Title: Insurance Cost Prediction- Predicting Medical Insurance Charges Using Linear Regression
+📌 Project Title
+Insurance Cost Prediction – Estimating Medical Charges Using Linear Regression
+👥 Team Members
+Team Leader: Krishna Bhavar (Integration & Documentation)
 
-Team Member Details:
+Member 1: Agaram Chandra Has Reddy (Data Loading & Exploration)
 
-Team Leader: Krishna Bhavar (integration-documentation)
-Member 1: Agaram Chandra Has Reddy (Branch: data-loading-exploration)
-Member 2: Aryan Choudhary (Branch: preprocessing-cleaning)
-Member 3: B Yashwanth Reddy (Branch: train-test-split-linear)
-Member 4: Banoth Mahesh (Branch: evaluation-metrics)
-Member 5: Bhadane Sayali (Branch: simple-improvements)
-Member 5: Amal K (Branch: Merging)
-Problem Statement:
+Member 2: Aryan Choudhary (Preprocessing & Cleaning)
 
-The objective of this project is to build a basic machine learning pipeline that predicts individual medical insurance costs based on demographic and lifestyle factors.​
-We aim to demonstrate the complete workflow of a supervised learning regression task, including data loading, preprocessing, model training, evaluation, and simple model improvements.​
-Additionally, we practice collaborative development using Git and GitHub, following a branch-based workflow and code review via pull requests.
-​Dataset Description:
+Member 3: B Yashwanth Reddy (Train-Test Split & Linear Model)
 
-We use the Medical Cost Personal Dataset (insurance dataset), which contains records of individuals and their corresponding yearly medical insurance charges.
-Each row represents one person, with the target variable charges indicating the insurance cost.
-​Key columns (features):​- age: Age of the individual (years, numeric).​- sex: Biological sex (male, female, categorical).​- bmi: Body Mass Index, a measure of body fat (numeric).​- children: Number of children/dependents (integer).​- smoker: Smoking status (yes, no, categorical).​- region: Residential area (northeast, northwest, southeast, southwest, categorical).​- charges: Individual medical insurance cost (continuous, target variable).
+Member 4: Banoth Mahesh (Evaluation & Metrics)
 
-​Data Preprocessing Steps:
+Member 5: Bhadane Sayali (Model Improvements)
 
-Loading and initial exploration:
-Loaded the dataset from insurance_data_linear.csv using pandas.
-Inspected the first few rows, data types, basic statistics, and checked for missing values.
-Handling missing values:
-Verified missing values column-wise.
-Rows with missing values (if any) were dropped using dropna() for simplicity.
-Feature selection:
-Selected age, bmi, children, sex, smoker, and region as input features.​ - Selected charges as the target variable.​
-Encoding categorical variables
-Applied one-hot encoding to sex, smoker, and region using OneHotEncoder inside a ColumnTransformer.​ - Used drop="first" to avoid multicollinearity due to dummy variables.
-Scaling (in improved model)
-For the improved model, applied StandardScaler to numeric features after adding polynomial features.​ - Numeric features: age, bmi, children.​
-Train–test split
-Split the data into training and testing sets using train_test_split.​ - Configuration used: 80% training and 20% testing.
-Model Used and Training Details: We used Linear Regression, a supervised learning regression algorithm that models the linear relationship between features and the target charges.
+Member 6: Amal K (Merging & Final Integration)
 
-Implementation details: Library: scikit-learn (LinearRegression).
+🎯 Problem Statement
+The goal of this project is to design a basic machine learning pipeline capable of predicting individual medical insurance costs based on personal and lifestyle attributes.
 
-Pipeline:
+This project demonstrates the complete workflow of a supervised regression problem, including:
 
-ColumnTransformer to handle:
-One-hot encoding for categorical variables (sex, smoker, region).
-Pass-through or scaled numeric features (age, bmi, children).​- Pipeline to chain preprocessing and model training into a single object.​Training:
-Fitted the pipeline on the training set with model.fit(X_train, y_train).
-The model learns coefficients for each transformed feature to minimize the mean squared error on the training data.
-Model Evaluation Results:
+Data loading and exploration
 
-We evaluated the model on the test set using standard regression metrics: MAE, RMSE, and R² score.​
+Data preprocessing and cleaning
 
-Baseline Linear Regression (with one-hot encoding, no scaling/polynomial features):
+Model training using linear regression
 
-MAE: 4181.194473753659
-RMSE: 5796.284659276275
-R²: 0.7835929767120722
-Improved Linear Regression (with polynomial features on numeric variables + scaling):
+Performance evaluation
 
-Improved model RMSE: 5841.28018590557
-Improved model R2 : 0.7802200772760515 These values are realistic sample numbers for this dataset and pipeline; you must replace them with the exact outputs from your own run.​
-GitHub Collaboration Summary:
+Basic improvements to enhance results
 
-We followed a branch-based collaboration workflow to match the assignment requirement of using Git and GitHub with branches, pull requests, and basic code review.
+Additionally, the project emphasizes collaborative development using Git and GitHub, following a structured branch-based workflow along with pull requests for code integration.
 
-Repository setup:
+📊 Dataset Description
+The project uses the Medical Cost Personal Dataset (Insurance Dataset), which contains information about individuals along with their annual medical insurance expenses.
 
-Created a central GitHub repository for the project.
-Branching strategy and roles:
+Each record corresponds to one individual, where the target variable charges represents the insurance cost.
 
-main: Stable, reviewed, and working version of the project.
+🔑 Features (Columns)
+age: Age of the individual (numeric)
 
-data-loading-exploration:
+sex: Gender of the individual (categorical: male/female)
 
-Owner: Member 1.
-Role: Load the CSV, perform basic EDA (head, info, describe), and check for missing values and basic distributions.
-preprocessing-cleaning:
+bmi: Body Mass Index – an indicator of body fat (numeric)
 
-Owner: Member 2.
-Role: Implement handling of missing values, define feature/target split, set up ColumnTransformer with one-hot encoding, and build a basic preprocessing pipeline.
-train-test-split-linear:
+children: Number of dependents (integer)
 
-Owner: Member 3.
-Role: Perform train–test split, integrate the preprocessing pipeline with LinearRegression into a single pipeline, and train the baseline model.
-evaluation-metrics:
+smoker: Smoking status (categorical: yes/no)
 
-Owner: Member 4.
-Role: Add evaluation metrics (MAE, RMSE, R²) on the test set, print and interpret results, and optionally create simple plots of predictions vs actual values.
-simple-improvements:
+region: Residential region (categorical: northeast, northwest, southeast, southwest)
 
-Owner: Member 5.
-Role: Experiment with simple improvements such as polynomial features and scaling for numeric variables, retrain the model, and compare metrics with the baseline.
-integration-documentation:
+charges: Medical insurance cost (continuous – target variable)
 
-Owner: Member 6.
-Role:Collect and Merge the repositories of all members and make them fix errors
+⚙️ Data Preprocessing Steps
+🔹 1. Data Loading & Initial Exploration
+Loaded dataset using pandas from insurance_data_linear.csv
 
-Owner: Team Leader.
-Role: Integrate all branches, clean and organize final code/notebook, and write/update README.md and any additional documentation.
-Development workflow:
+Examined dataset structure, data types, and summary statistics
 
-Each member cloned the repository and worked on their assigned branch.​- Work was committed in small, logical steps with descriptive commit messages.
-After completing a feature, members pushed their branch to GitHub and opened a pull request into main.
-Code review and merging:
+Checked for missing values
 
-Team members reviewed each pull request, checked code correctness, style, and consistency, and requested changes if necessary.​- After approval, branches were merged into main, and any merge conflicts were resolved collaboratively.
-Conclusion:
+🔹 2. Handling Missing Values
+Verified missing entries column-wise
 
-In this project, we implemented an end-to-end machine learning pipeline for predicting medical insurance charges using Linear Regression on the Medical Cost Personal Dataset.
-We covered key steps such as dataset exploration, preprocessing (missing values, encoding categoricals, scaling), model training, evaluation, and a simple improvement with polynomial features and scaling.
-The improved model showed better error metrics and a higher R² score, indicating that capturing non-linear patterns can enhance prediction accuracy for insurance charges.
-By organizing our work into multiple Git branches and using pull requests and reviews, we also gained practical experience with collaborative development and version control, aligning with the assignment’s GitHub collaboration requirement.
+Removed rows with missing values (if present) using dropna() for simplicity
+
+🔹 3. Feature Selection
+Selected input features:
+age, bmi, children, sex, smoker, region
+
+Selected target variable:
+charges
+
+🔹 4. Encoding Categorical Variables
+Applied One-Hot Encoding using OneHotEncoder within a ColumnTransformer
+
+Used drop="first" to prevent multicollinearity caused by dummy variables
+
+🔹 5. Feature Scaling (Improved Model)
+Applied StandardScaler to numerical features after adding polynomial features
+
+Scaled features include:
+age, bmi, children
+
+🔹 6. Train-Test Split
+Split dataset into training and testing sets using train_test_split
+
+Configuration used:
+80% training / 20% testing
+
+🤖 Model Used & Training Details
+We implemented Linear Regression, a supervised learning algorithm used to model the relationship between input features and the target variable (charges).
+
+The model learns a linear relationship that helps estimate insurance costs based on the given attributes.
+
+🚀 Summary
+This project provides a complete pipeline for predicting medical insurance costs while also demonstrating:
+
+Practical machine learning workflow
+
+Data preprocessing techniques
+
+Model evaluation strategies
+
+Collaborative development using Git branches
